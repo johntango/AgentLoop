@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Study Progress Tracker</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f5f7fb;
+        color: #1f2937;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 16px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 16px;
+      }
+      h1,
+      h2 {
+        margin-top: 0;
+      }
+      #messages {
+        height: 420px;
+        overflow-y: auto;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 10px;
+        background: #fcfcfd;
+      }
+      .msg {
+        margin: 8px 0;
+        padding: 8px 10px;
+        border-radius: 8px;
+      }
+      .msg.user {
+        background: #dbeafe;
+      }
+      .msg.agent {
+        background: #e5e7eb;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      input,
+      button {
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        cursor: pointer;
+        background: #2563eb;
+        color: #fff;
+        border: none;
+      }
+      button:hover {
+        background: #1d4ed8;
+      }
+      #completedList {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .muted {
+        color: #6b7280;
+        font-size: 13px;
+      }
+      @media (max-width: 860px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="card">
+        <h1>Study Progress Agent</h1>
+        <p class="muted">Ask what to study next or record completed topics.</p>
+
+        <div id="messages"></div>
+
+        <div class="row">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Type a message..."
+          />
+          <button id="sendBtn">Send</button>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Current Progress</h2>
+        <p><strong>Goal:</strong> <span id="goal">-</span></p>
+        <p><strong>Total Topics:</strong> <span id="totalTopics">-</span></p>
+        <p><strong>Completed:</strong> <span id="completedCount">0</span></p>
+        <p><strong>Percent:</strong> <span id="percent">0</span>%</p>
+
+        <h3>Completed Topics</h3>
+        <ul id="completedList"></ul>
+
+        <h3>Quick Complete</h3>
+        <div class="row">
+          <input
+            id="topicInput"
+            type="text"
+            placeholder="e.g. linear equations"
+          />
+          <button id="completeBtn">Mark</button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
