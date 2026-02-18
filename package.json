@@ -2,9 +2,9 @@
   "name": "agent-study-progress-tracker",
   "version": "1.0.0",
   "description": "Simple agent-based study progress tracker using Express, OpenAI, and vanilla JS UI",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18"
