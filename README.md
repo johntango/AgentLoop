@@ -5,11 +5,7 @@ A small Node.js + Express app with a minimal browser UI and an agent-style study
 ## Prerequisites
 
 - Node.js 18+
-- OpenAI API key set in your environment:
-
-```bash
-export OPENAI_API_KEY=your_key_here
-```
+- OpenAI API key set in your secrets
 
 For CI, store `OPENAI_API_KEY` in GitHub Secrets.
 
